@@ -10,6 +10,7 @@
 </ul>
 
 <h2>如何部署</h2>
-<ul>
+<ul type="1">
 <h3>从源代码开始</h3>
+<li><code>git clone https://github.com/52ludama/linode_panel.git</code></li>
 </ul>
