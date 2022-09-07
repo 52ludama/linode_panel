@@ -26,10 +26,6 @@ class Users(db.Model, UserMixin):
     username = db.Column(db.String(10))
     password = db.Column(db.String(16))
 
-    def __init__(self):
-        self.username = 'admin'
-        self.password = 'admin'
-
 
 class LinodeToken(db.Model):
     __tablename__ = 'linode_token'
@@ -126,4 +122,15 @@ def reset_admin():  # 登录模块
 
 if __name__ == '__main__':
     db.create_all()
+    user = Users.query.all()
+    if user:
+        pass
+    else:
+        print("====创建用户====")
+        username = input("用户名：")
+        password = input("密码：")
+        user_admin = Users(username=username, password=password)
+        db.session.add(user_admin)
+        db.session.commit()
+        print("====创建成功====")
     app.run(host='0.0.0.0', threaded=True)
