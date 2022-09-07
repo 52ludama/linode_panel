@@ -9,8 +9,11 @@
 <li>2022年9月6日 本着先上线再迭代的原则，上传第一个demo</li>
 </ul>
 
-<h2>如何部署</h2>
+<h2>如何运行</h2>
 <ul>
 <h3>从源代码开始</h3>
 <li type="1"><code>git clone https://github.com/52ludama/linode_panel.git</code></li>
+<li type="1"><code>cd /linode_panel</code></li>
+<li type="1"><code>pip3 install -r requirements.txt</code></li>
+<li type="1"><code>python3 main.py</code></li>
 </ul>
