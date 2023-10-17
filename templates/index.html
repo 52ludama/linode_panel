@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linode_panel</title>
+    <title>L_Panel</title>
     <link href="../static/css/css2.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/tailwind.output.css">
     <script src="../static/js/alpine.min.js" defer=""></script>
@@ -32,7 +32,7 @@
           </ul>
           <ul>
             <li class="relative px-6 py-3">
-              <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="/linode_token">
+              <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="linode_token">
                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
                   <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                 </svg>
@@ -41,7 +41,7 @@
             </li>
           </ul><ul>
             <li class="relative px-6 py-3">
-              <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="/setting">
+              <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="setting">
                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
                   <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
                 </svg>
@@ -72,7 +72,7 @@
           </ul>
           <ul>
             <li class="relative px-6 py-3">
-              <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="/linode_token">
+              <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="linode_token">
                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
                   <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                 </svg>
@@ -80,7 +80,7 @@
               </a>
             </li>
             <li class="relative px-6 py-3">
-              <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="/setting">
+              <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200" href="setting">
                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" stroke="currentColor">
                   <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
                 </svg>
@@ -422,7 +422,7 @@
                   <nav aria-label="Table navigation">
                     <ul class="inline-flex items-center">
                       <li>
-                        <button @click="page_select(1)" @click="lastpage" class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple" aria-label="Previous">
+                        <button @click="page_select(1)" class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple" aria-label="Previous">
                           <svg
             class="h-4 w-4 fill-current"
             width="4"
@@ -533,7 +533,7 @@
         var token_init;
         $.ajax({
                             type: "POST",
-                            url: "linode_token/list",
+                            url: "/linode_token/list",
                             async:false,
                             data: JSON.stringify({'page_num': page_num}),
                             contentType: "application/json;charset=UTF-8",
@@ -552,7 +552,7 @@
         var total_init;
         $.ajax({
                             type: "POST",
-                            url: "linode_server/list",
+                            url: "/linode_server/list",
                             async:false,
                             data: JSON.stringify({'page_num': page_num, 'page_size': 9999}),
                             contentType: "application/json;charset=UTF-8",
@@ -593,7 +593,7 @@
                     var shuju = [];
                     $.ajax({
                             type: "POST",
-                            url: "linode_server/creat",
+                            url: "/linode_server/creat",
                             async:false,
                             data: JSON.stringify({'linode_type':this.select_type,'linode_token' :this.select_token,'linode_region':this.select_region,'linode_image':this.select_image,'root_pass':this.root_pass,'server_label':this.server_label}),
                             contentType: "application/json;charset=UTF-8",
