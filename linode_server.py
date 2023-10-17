@@ -2,12 +2,12 @@ import json
 
 from flask import Blueprint, render_template, request
 from flask_login import login_required
-from linode import linode_creat_server, linode_del_server
+from server_api.linode import linode_creat_server, linode_del_server
 
 linode_server = Blueprint('linode_server', __name__)
 
 
-@linode_server.route('/linode_server/list', methods=['GET', 'POST'])
+@linode_server.route('/list', methods=['GET', 'POST'])
 @login_required
 def get_server_list():
     if request.method == 'POST':
@@ -27,7 +27,7 @@ def get_server_list():
         return json.dumps(all_info)
 
 
-@linode_server.route('/linode_server/server_view', methods=['GET', 'POST'])
+@linode_server.route('/server_view', methods=['GET', 'POST'])
 @login_required
 def get_server_view():
     linode_id = request.args.get('linode_id')
@@ -37,7 +37,7 @@ def get_server_view():
     return render_template("linode_server.html", linode_server=linode_server_token_1, token_key=linode_server_token_2.token_key)
 
 
-@linode_server.route('/linode_server/creat', methods=['GET', 'POST'])
+@linode_server.route('/creat', methods=['GET', 'POST'])
 @login_required
 def server_creat():
     if request.method == 'POST':
@@ -59,7 +59,7 @@ def server_creat():
         return json.dumps(result)
 
 
-@linode_server.route('/linode_server/del', methods=['GET', 'POST'])
+@linode_server.route('/del', methods=['GET', 'POST'])
 @login_required
 def server_del():
     if request.method == 'POST':
@@ -74,7 +74,7 @@ def server_del():
         return json.dumps([result])
 
 
-@linode_server.route('/linode_server/info', methods=['GET', 'POST'])
+@linode_server.route('/info', methods=['GET', 'POST'])
 @login_required
 def server_info():
     if request.method == 'POST':

@@ -3,18 +3,12 @@ import json
 
 from flask import Blueprint, render_template, request
 from flask_login import login_required
-from linode import linode_getinfo
+from server_api.linode import linode_getinfo
 
 linode_token = Blueprint('linode_token', __name__)
 
 
-@linode_token.route('/linode_token')
-@login_required
-def token():
-    return render_template("linode_token.html")
-
-
-@linode_token.route('/linode_token/add', methods=['GET', 'POST'])
+@linode_token.route('/add', methods=['GET', 'POST'])
 @login_required
 def add_token():
     if request.method == 'POST':
@@ -39,7 +33,7 @@ def add_token():
             return json.dumps(['error'])
 
 
-@linode_token.route('/linode_token/del', methods=['GET', 'POST'])
+@linode_token.route('/del', methods=['GET', 'POST'])
 @login_required
 def del_token():
     if request.method == 'POST':
@@ -55,7 +49,7 @@ def del_token():
             return json.dumps(['error'])
 
 
-@linode_token.route('/linode_token/check', methods=['GET', 'POST'])
+@linode_token.route('/check', methods=['GET', 'POST'])
 @login_required
 def check_token():
     from main import LinodeToken, db
@@ -73,7 +67,7 @@ def check_token():
     return json.dumps(['ok'])
 
 
-@linode_token.route('/linode_token/list', methods=['GET', 'POST'])
+@linode_token.route('/list', methods=['GET', 'POST'])
 @login_required
 def get_list():
     if request.method == 'POST':
