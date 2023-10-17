@@ -1,20 +1,25 @@
-<div>
-<h2>linode_panel项目简介</h2>
-<p>本项目是一个采用 flask + alpinejs + tailwind 框架开发的基于 api 的 linode 开机面板</p>
-<p>本项目是一个用于学习 alpinejs + flask 的项目，所以写的很烂（里面一堆bug）</p>
-</div>
+# linode_panel
+本项目是一个采用 flask + alpinejs + tailwind 框架开发的基于 api 的 linode 开机面板  
+本项目是一个用于学习 alpinejs + flask 的项目，所以写的很烂（里面一堆bug）
 
-<h2>开发日志</h2>
-<ul>
-<li>2022年9月7日 修复未创建管理员账户问题</li>
-<li>2022年9月6日 本着先上线再迭代的原则，上传第一个demo</li>
-</ul>
+## 开发日志
+- 2023年10月18日 项目结构优化，仓库还未同步
+- 2022年9月7日 修复未创建管理员账户问题
+- 2022年9月6日 本着先上线再迭代的原则，上传第一个demo
 
-<h2>如何运行</h2>
-<ul>
-<h3>从源代码开始</h3>
-<li type="1"><code>git clone https://github.com/52ludama/linode_panel.git</code></li>
-<li type="1"><code>cd /linode_panel</code></li>
-<li type="1"><code>pip3 install -r requirements.txt</code></li>
-<li type="1"><code>python3 main.py</code></li>
-</ul>
+
+## 如何运行
+### 1.从源代码开始
+```
+git clone https://github.com/52ludama/linode_panel.git
+```
+```
+cd /linode_panel
+```
+```
+pip3 install -r requirements.txt
+```
+```
+python3 main.py
+```
+
